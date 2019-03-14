@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJSTQXP');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Which movie should I watch on Netflix Swiss?</title>
+    <title>Netflix Zufallsgenerator – Was guck ich denn heute?</title>
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,300,300i" rel="stylesheet">
-    <META NAME="Description" CONTENT="Müde vom stundenlangen Film-Auswählen bei Netflix? Genug von Streit mit Kollegen, Verwandten, Freund oder Freundin? Der Zufallsgenerator entscheidet für euch!">
+    <META NAME="Description" CONTENT="Müde vom stundenlangen Film-Auswählen bei Netflix? Lass den Zufall entscheiden!">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta property="og:image" content="http://netflix.enolic.ch/post.jpg">
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSTQXP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="loader" id="loader">
       <div class="spinner">
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
       </div>
     </div>
-    <div class="d1" id="d1">
-      <div class="innerd">
-        <div class="poster" id="poster">&nbsp;</div>
-        <div class="text">
-
-          <h2 id="title">Bla Bla</h2>
-          <table class="subinfos">
+    <div class="wrapper" id="wrapper">
+      <div class="innerWrapper">
+        <h1>
+            Which Movie <br>should i<br> watch?
+        </h1>
+        <div class="footer">
+          <button class="button" onclick="getmovie()">get random movie</button>
+          <a href="https://www.enolic.ch" target="_blank">www.enolic.ch</a>
+        </div>
+      </div>
+    </div>
+    <div class="detailsContainer" id="detailsContainer">
+      <div class="innerDetails">
+        <div class="movieImage" id="movieImage"><div class="link"><a href="" id="netflixlink" target="blank"><div class="externaLink"><img src="images/external.svg" width="80%" /></div></a></div></div>
+        <div class="contentDetails">
+          <h2 id="titleDetails">Bla Bla</h2>
+          <table class="subInfos">
             <tr><td class="titleSub" valign="top">Genres</td><td  valign="top" class="titleLabel" id="genre">Liebesfilm</td></tr>
             <tr><td class="titleSub" valign="top">Laufzeit</td><td valign="top" class="titleLabel" id="dauer">1h 52min</td></tr>
             <tr><td class="titleSub" valign="top">Bewertung</td><td valign="top" class="titleLabel" id="rating">78%</td></tr>
             <tr><td class="titleSub" valign="top">FSK</td><td valign="top" class="titleLabel" id="fsk">6</td></tr>
             <tr><td class="titleSub" valign="top">Regisseur</td><td valign="top" class="titleLabel" id="director">Bla di Blub</td></tr>
           </table>
-
         </div>
-        <button class="button button2" id="close">close</button>
-      </div>
-
-    </div>
-    <div class="wrapper" id="wrapper">
-      <h1>
-          Which Movie <br>should i<br> watch?
-      </h1>
-      <div class="footer">
-        <button class="button" onclick="getmovie()">get random movie</button>
-        <a href="https://www.enolic.ch" target="_blank">www.enolic.ch</a>
+        <div class="buttonDetails"><button class="button" id="close">close</button></div>
       </div>
     </div>
   </body>

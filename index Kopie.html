@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Which movie should I watch on Netflix Swiss?</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,300,300i" rel="stylesheet">
+    <META NAME="Description" CONTENT="Müde vom stundenlangen Film-Auswählen bei Netflix? Genug von Streit mit Kollegen, Verwandten, Freund oder Freundin? Der Zufallsgenerator entscheidet für euch!">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+    body,html {
+      width:100%;
+      height:100%;
+      padding:0;
+      margin:0;
+      background-color: black;
+    }
+
+    .detailsContainer{
+      width: 100%;
+      height:100%;
+      display: none;
+    }
+
+    .innerDetails {
+        width: calc(100% - 100px);
+        min-height: calc(100% - 100px);
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        flex-grow:1;
+        margin-left: 50px;
+        margin-bottom: 50px;
+        top: 50px;
+        position: relative;
+
+      }
+
+      .movieImage{
+        background-image: url('images/background.jpg');
+        height:300px;
+      }
+
+      .contentDetails {
+        width: calc(100%-100);
+        flex-grow:1;
+        margin: 50px;
+      }
+
+      .buttonDetails {
+        height: auto;
+        width: 100%;
+        background: white;
+      }
+
+      .button{
+       font-family: 'Roboto', sans-serif;
+       width:100%;
+       background-color: #E50914;
+       border:none;
+       color:white;
+       font-size: 29px;
+       line-height: 29px;
+       text-transform: uppercase;
+       padding-top: 20px;
+       padding-bottom: 18px;
+       font-weight:300;
+      }
+
+      .buttonDetails .button{
+        width: calc(100% - 100px);
+        margin-left:50px;
+        margin-bottom: 50px;
+      }
+
+      h2{
+        font-family: 'Bebas Neue';
+        color:#090C15;
+        letter-spacing: 1px;
+        padding: 0;
+        margin: 0;
+        font-size: 104px;
+        line-height: 104px;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+      }
+
+      .subInfos {
+        margin-top: 30px;
+        font-size: 24px;
+        line-height: 36px;
+        width:100%;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .titleSub{
+        width:300px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #221f1f;
+      }
+
+      .wrapper {
+        background-image: url('images/background.jpg');
+        background-repeat: no-repeat;
+        background-size:cover;
+        padding: 0;
+        margin: 0;
+        height:100%;
+        width:100%;
+        color: #221f1f;
+      }
+
+      .innerWrapper{
+        display: flex;  /* use the flex model */
+        min-height: 100%;
+        flex-direction: column;
+        width: calc(100% - 100px);
+        min-height: calc(100% - 50px);
+        margin-left: 50px;
+        top: 50px;
+        position: relative;
+
+      }
+
+      h1{
+        font-family: 'Bebas Neue';
+        font-weight: normal;
+        font-style: normal;
+        color:white;
+        letter-spacing: 1px;
+        padding: 0;
+        margin: 0;
+        font-size: 144px;
+        line-height: 144px;
+        flex: 1;
+      }
+
+      a {
+        color:white;
+        font-size: 18px;
+        line-height: 18px;
+        font-family: 'Roboto', sans-serif;
+        color:white;
+        text-decoration: none;
+        font-weight:300;
+        display: block;
+        margin:0 auto;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+
+
+
+
+      @media only screen and (max-width: 768px) {
+        .subInfos {
+          font-size: 20px;
+          line-height: 32px;
+        }
+
+        h1{
+          font-size: 124px;
+          line-height: 124px;
+        }
+
+        h2{
+          font-size: 84px;
+          line-height: 84px;
+        }
+
+        .titleSub{
+          width:200px;
+        }
+      }
+
+      @media only screen and (max-width: 630px) {
+
+        h1{
+          font-size: 104px;
+          line-height: 104px;
+        }
+      }
+
+      @media only screen and (max-width: 535px) {
+        .subInfos {
+          font-size: 20px;
+          line-height: 32px;
+        }
+
+        h2{
+          font-size: 64px;
+          line-height: 64px;
+        }
+
+        .titleSub{
+          width:150px;
+        }
+
+        .movieImage{
+          height:180px;
+        }
+
+        .contentDetails {
+          width: calc(100%-60);
+          margin: 30px;
+        }
+
+        .buttonDetails .button {
+            width: calc(100% - 60px);
+            margin-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .innerDetails {
+            width: calc(100% - 60px);
+            min-height: calc(100% - 60px);
+            margin-left: 30px;
+            margin-bottom:30px;
+            top: 30px;
+        }
+        .subInfos {
+              margin-top: 10px;
+        }
+
+        .innerWrapper{
+          width: calc(100% - 60px);
+          min-height: calc(100% - 30px);
+          margin-left: 30px;
+          top:30px;
+        }
+
+        a {
+          margin-bottom: 30px;
+        }
+        h1{
+          font-size: 84px;
+          line-height: 84px;
+        }
+
+      }
+      @media only screen and (max-width: 415px) {
+        h1{
+          font-size: 64px;
+          line-height: 64px;
+        }
+      }
+
+      @media only screen and (max-width: 320px) {
+        .contentDetails {
+          width: calc(100%-40px;);
+          margin: 20px;
+        }
+        .innerDetails {
+            width: calc(100% - 40px);
+            min-height: calc(100% - 40px);
+            margin-left: 20px;
+            margin-bottom:20px;
+            top: 20px;
+        }
+
+        .subInfos {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        h2{
+          font-size: 44px;
+          line-height: 44px;
+        }
+
+        .button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            line-height: 20px;
+            padding-top: 20px;
+            padding-bottom: 18px;
+        }
+
+        .titleSub{
+          width:120px;
+        }
+        .innerWrapper{
+          width: calc(100% - 40px);
+          min-height: calc(100% - 20px);
+          margin-left: 20px;
+          top:20px;
+        }
+        a {
+          margin-bottom: 20px;
+          margin-top: 20px;
+        }
+
+      }
+
+
+      .loader {
+        position: absolute;
+        width: 100%;
+        height:100%;
+        z-index: 10000;
+        background-color:#000;
+        opacity: 0.9;
+        display: none;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 0 auto;
+        top:50%;
+      }
+
+      .double-bounce1, .double-bounce2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: #E50914;
+        opacity: 0.6;
+        position: absolute;
+        z-index: 10001;
+        top: 0;
+        left: 0;
+
+        -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+        animation: sk-bounce 2.0s infinite ease-in-out;
+      }
+
+      .double-bounce2 {
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
+      }
+
+      @-webkit-keyframes sk-bounce {
+        0%, 100% { -webkit-transform: scale(0.0) }
+        50% { -webkit-transform: scale(1.0) }
+      }
+
+      @keyframes sk-bounce {
+        0%, 100% {
+          transform: scale(0.0);
+          -webkit-transform: scale(0.0);
+        } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+        }
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+    <div class="wrapper" id="wrapper">
+      <div class="innerWrapper">
+        <h1>
+            Which Movie <br>should i<br> watch?
+        </h1>
+        <div class="footer">
+          <button class="button" onclick="getmovie()">get random movie</button>
+          <a href="https://www.enolic.ch" target="_blank">www.enolic.ch</a>
+        </div>
+      </div>
+    </div>
+    <div class="detailsContainer" id"detailsContainer">
+      <div class="innerDetails">
+        <div class="movieImage" id="movieImage">&nbsp;</div>
+        <div class="contentDetails">
+          <h2 id="titleDetails">Bla Bla</h2>
+          <table class="subInfos">
+            <tr><td class="titleSub" valign="top">Genres</td><td  valign="top" class="titleLabel" id="genre">Liebesfilm</td></tr>
+            <tr><td class="titleSub" valign="top">Laufzeit</td><td valign="top" class="titleLabel" id="dauer">1h 52min</td></tr>
+            <tr><td class="titleSub" valign="top">Bewertung</td><td valign="top" class="titleLabel" id="rating">78%</td></tr>
+            <tr><td class="titleSub" valign="top">FSK</td><td valign="top" class="titleLabel" id="fsk">6</td></tr>
+            <tr><td class="titleSub" valign="top">Regisseur</td><td valign="top" class="titleLabel" id="director">Bla di Blub</td></tr>
+          </table>
+        </div>
+        <div class="buttonDetails"><button class="button" id="close">close</button></div>
+      </div>
+    </div>
+  </body>
+</html>
